@@ -1,7 +1,9 @@
 package org.wit.placement.models
 
+import android.widget.Button
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
+import org.wit.placement.R
 
 var lastId = 0L
 
@@ -28,6 +30,7 @@ class PlacemarkMemStore : PlacementStore, AnkoLogger {
     if (foundPlacemark != null) {
       foundPlacemark.title = placemark.title
       foundPlacemark.description = placemark.description
+
       logAll()
     }
   }
@@ -35,4 +38,5 @@ class PlacemarkMemStore : PlacementStore, AnkoLogger {
   fun logAll() {
     placemarks.forEach { info("${it}") }
   }
+
 }
